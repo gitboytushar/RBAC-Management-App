@@ -33,7 +33,7 @@ const SideBar = ({ onLinkClick }) => {
   ]
 
   return (
-    <div className='flex flex-col items-stretch justify-between h-full'>
+    <div className='flex flex-col items-stretch justify-between gap-12 lg:gap-0 h-full'>
       {/* Sidebar Heading */}
       <div className='text-start'>
         <h2 className='text-2xl'>Management Panel</h2>
@@ -43,7 +43,7 @@ const SideBar = ({ onLinkClick }) => {
       </div>
 
       {/* Navigation Links */}
-      <div className='pb-16'>
+      <div className='lg:pb-20'>
         {data.map((items, i) => (
           <Link
             to={items.link}
