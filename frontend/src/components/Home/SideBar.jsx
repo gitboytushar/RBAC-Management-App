@@ -1,54 +1,55 @@
 import React from 'react'
 import {
-  CircleCheckBig,
-  Copyright,
-  Info,
-  List,
   LogOut,
-  Star
+  UserRoundCheck,
+  UserRoundCog,
+  UserRoundX,
+  UsersRound
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-const SideBar = () => {
+const SideBar = ({ onLinkClick }) => {
   const data = [
-    { title: 'All tasks', icon: <List size={18} />, link: '/' },
     {
-      title: 'Important tasks',
-      icon: <Star size={18} />,
+      title: 'All Employees',
+      icon: <UsersRound size={20} className='text-sky-500' />,
+      link: '/'
+    },
+    {
+      title: 'On Probation',
+      icon: <UserRoundCog size={20} className='text-orange-500' />,
       link: '/importantTasks'
     },
     {
-      title: 'Completed tasks',
-      icon: <CircleCheckBig size={18} />,
+      title: 'Active',
+      icon: <UserRoundCheck size={20} className='text-green-500' />,
       link: '/completedTasks'
     },
     {
-      title: 'Incompleted tasks',
-      icon: <Info size={18} />,
+      title: 'On Leave',
+      icon: <UserRoundX size={20} className='text-red-500' />,
       link: '/incompletedTasks'
     }
   ]
 
   return (
-    <>
-      {/* sidebar heading */}
-      <div>
-        <h2 className='text-xl'>Task Management App</h2>
-        <h4 className='w-full text-sm text-white/30 tracking-wide flex items-center justify-start gap-1'>
-          <span>
-            <Copyright size={13} />
-          </span>
-          <span>developer Tushar Verma</span>
+    <div className='flex flex-col items-stretch justify-between h-full'>
+      {/* Sidebar Heading */}
+      <div className='text-start'>
+        <h2 className='text-2xl'>Management Panel</h2>
+        <h4 className='text-sm text-white/40 tracking-wide'>
+          <span>Employees Data and Status</span>
         </h4>
       </div>
 
-      {/* data items */}
-      <div>
+      {/* Navigation Links */}
+      <div className='pb-16'>
         {data.map((items, i) => (
           <Link
             to={items.link}
             key={i}
-            className='my-4 p-4 rounded-lg border border-white/10 hover:border-transparent hover:bg-white/10 cursor-pointer transition-all duration-300 ease-in-out flex items-center justify-between'
+            onClick={onLinkClick}
+            className='font-light my-4 p-4 rounded-lg border border-white/10 hover:border-transparent hover:bg-white/10 cursor-pointer transition-all duration-200 ease-in-out flex items-center justify-between active:scale-95'
           >
             {items.title}
             {items.icon}
@@ -56,14 +57,14 @@ const SideBar = () => {
         ))}
       </div>
 
-      {/* user log out btn */}
+      {/* User Logout Button */}
       <div>
-        <button className='bg-white/10 w-full py-2 px-4 rounded-lg hover:bg-red-900 cursor-pointer transition-all duration-200 ease-in-out flex items-center justify-center gap-3'>
+        <button className='bg-white/5 w-full p-4 rounded-lg hover:bg-red-800 cursor-pointer transition-all duration-300 ease-in-out active:scale-95 flex items-center justify-center gap-3'>
           <span>Log Out</span>
           <LogOut size={16} />
         </button>
       </div>
-    </>
+    </div>
   )
 }
 
