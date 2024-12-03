@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  LogOut,
-  UserRoundCheck,
-  UserRoundCog,
-  UserRoundX,
-  UsersRound
-} from 'lucide-react'
+import { LogOut, UserRoundCheck, UserRoundX, UsersRound } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const SideBar = ({ onLinkClick }) => {
@@ -16,19 +10,14 @@ const SideBar = ({ onLinkClick }) => {
       link: '/'
     },
     {
-      title: 'On Probation',
-      icon: <UserRoundCog size={20} className='text-orange-500' />,
-      link: '/importantTasks'
-    },
-    {
       title: 'Active',
       icon: <UserRoundCheck size={20} className='text-green-500' />,
-      link: '/completedTasks'
+      link: '/active'
     },
     {
-      title: 'On Leave',
+      title: 'Inactive',
       icon: <UserRoundX size={20} className='text-red-500' />,
-      link: '/incompletedTasks'
+      link: '/inactive'
     }
   ]
 
@@ -49,7 +38,7 @@ const SideBar = ({ onLinkClick }) => {
             to={items.link}
             key={i}
             onClick={onLinkClick}
-            className='font-light my-4 p-4 rounded-lg border border-white/10 hover:border-transparent hover:bg-white/10 cursor-pointer transition-all duration-200 ease-in-out flex items-center justify-between active:scale-95'
+            className='font-light my-4 py-4 px-5 rounded-lg border border-white/10 hover:border-transparent hover:bg-white/10 cursor-pointer transition-all duration-200 ease-in-out flex items-center justify-between active:scale-95'
           >
             {items.title}
             {items.icon}
@@ -59,7 +48,7 @@ const SideBar = ({ onLinkClick }) => {
 
       {/* User Logout Button */}
       <div>
-        <button className='bg-white/5 w-full p-4 rounded-lg hover:bg-red-800 cursor-pointer transition-all duration-300 ease-in-out active:scale-95 flex items-center justify-center gap-3'>
+        <button className='bg-white/5 w-full p-4 rounded-lg hover:bg-red-800 cursor-pointer transition-all duration-300 ease-in-out active:scale-95 flex items-center justify-center gap-4'>
           <span>Log Out</span>
           <LogOut size={16} />
         </button>

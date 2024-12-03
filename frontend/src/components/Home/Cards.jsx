@@ -8,7 +8,7 @@ const Cards = () => {
       name: 'Aarav Kapoor',
       role: 'Backend Developer',
       department: 'Development',
-      status: 'Probation',
+      status: 'Inactive',
       email: 'aarav.kapoor@gmail.com'
     },
     {
@@ -24,7 +24,7 @@ const Cards = () => {
       name: 'Kabir Malhotra',
       role: 'Product Designer',
       department: 'Design',
-      status: 'On Leave',
+      status: 'Inactive',
       email: 'kabir.malhotra@outlook.com'
     },
     {
@@ -48,7 +48,7 @@ const Cards = () => {
       name: 'Vikram Ahuja',
       role: 'DevOps Engineer',
       department: 'Infrastructure',
-      status: 'Probation',
+      status: 'Inactive',
       email: 'vikram.ahuja@gmail.com'
     },
     {
@@ -78,10 +78,8 @@ const Cards = () => {
                   className={`text-white font-medium text-xs px-3 py-0.5 rounded-md active:scale-90 transition-all duration-200 ease-linear ${
                     items.status === 'Active'
                       ? 'bg-green-700'
-                      : items.status === 'On Leave'
+                      : items.status === 'Inactive'
                       ? 'bg-red-700'
-                      : items.status === 'Probation'
-                      ? 'bg-orange-700'
                       : 'bg-white/20'
                   }`}
                 >
