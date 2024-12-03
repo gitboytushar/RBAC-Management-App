@@ -75,7 +75,7 @@ const Cards = () => {
 
                 {/* user status change button */}
                 <button
-                  className={`text-white font-normal text-xs px-3 py-0.5 rounded-md hover:scale-110 transition-all duration-200 ease-linear ${
+                  className={`text-white font-medium text-xs px-3 py-0.5 rounded-md active:scale-90 transition-all duration-200 ease-linear ${
                     items.status === 'Active'
                       ? 'bg-green-700'
                       : items.status === 'On Leave'
