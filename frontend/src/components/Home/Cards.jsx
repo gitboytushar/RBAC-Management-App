@@ -7,7 +7,7 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip'
 
-const Cards = ({ home }) => {
+const Cards = ({ home, setInputDiv }) => {
   const employees = [
     {
       id: 1,
@@ -138,9 +138,12 @@ const Cards = ({ home }) => {
           </div>
         ))}
 
-      {/* add new data button */}
+      {/* add new data - second button positoned at the end of cards array */}
       {home === 'true' && (
-        <button className='border bg-white/5 border-white/10 active:scale-95 transition-all duration-200 ease-linear p-5 rounded-md font-light flex items-center justify-center min-h-[270px]'>
+        <button
+          onClick={() => setInputDiv('fixed')}
+          className='border bg-white/5 border-white/10 active:scale-95 transition-all duration-200 ease-linear p-5 rounded-md font-light flex items-center justify-center min-h-[270px]'
+        >
           <div className='text-white/30 flex flex-col-reverse items-center justify-center gap-2 w-fit p-2'>
             <span className='text-xl'>Add New</span>
             <span>
