@@ -84,7 +84,7 @@ const Cards = ({ home }) => {
 
                 {/* cta btn - user can click to change status, shadcn/ui Tooltip to show on hover */}
                 <TooltipProvider>
-                  <Tooltip delayDuration={500} skipDelayDuration={300}>
+                  <Tooltip delayDuration={300} skipDelayDuration={300}>
                     <TooltipTrigger asChild>
                       <button
                         className={`text-white font-medium text-sm md:text-xs px-3 py-0.5 rounded-md active:scale-90 transition-all duration-200 ease-linear ${
