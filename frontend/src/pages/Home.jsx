@@ -38,7 +38,7 @@ const Home = () => {
         {!isSidebarOpen && (
           <button
             onClick={toggleSidebar}
-            className='absolute z-30 lg:hidden top-11 -left-7 bg-white rounded-r-full py-1 pl-10 pr-1'
+            className='absolute z-30 lg:hidden top-28 md:top-[34px] -left-7 bg-white rounded-r-full py-1 pl-10 pr-1'
           >
             <CircleChevronRight size={25} color='#000' />
           </button>

@@ -1,7 +1,12 @@
+import Cards from '@/components/Home/Cards'
 import React from 'react'
 
 const Inactive = () => {
-  return <div className='text-red-500'>Inactive employees</div>
+  return (
+    <div>
+      <Cards home={'false'} />
+    </div>
+  )
 }
 
 export default Inactive

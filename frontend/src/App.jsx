@@ -7,7 +7,7 @@ import Inactive from './pages/Inactive'
 
 function App () {
   return (
-    <div className='bg-black/90 text-white h-screen p-2'>
+    <div className='bg-black/90 text-white h-screen p-2 relative'>
       <Router>
         <Routes>
           {/* entry point */}

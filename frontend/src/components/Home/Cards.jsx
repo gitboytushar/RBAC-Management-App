@@ -7,7 +7,7 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip'
 
-const Cards = () => {
+const Cards = ({ home }) => {
   const employees = [
     {
       id: 1,
@@ -116,7 +116,7 @@ const Cards = () => {
 
               <hr className='my-4 rounded-full opacity-10' />
 
-              <p className='mt-4 flex items-center justify-center md:justify-start gap-1 text-sm overflow-x-auto whitespace-nowrap hide-the-scrollbar'>
+              <p className='mt-4 flex flex-col md:flex-row items-center justify-center md:justify-start gap-1 gap-y-0 text-sm'>
                 <span className='text-white/80'>{items.department}</span>
                 <span className='text-white/50'>Department</span>
               </p>
@@ -126,11 +126,11 @@ const Cards = () => {
 
             {/* edit data buttons */}
             <div className='flex flex-col md:flex-row items-center justify-between gap-3'>
-              <button className='py-2 px-3 w-full md:w-1/2 rounded-lg border border-white/10 bg-transparent hover:border-transparent hover:bg-white/5 transition-all duration-300 ease-in-out flex items-center justify-center gap-3 text-white/50 hover:text-white'>
+              <button className='py-2 px-3 w-full md:w-1/2 rounded-lg border border-white/10 bg-transparent hover:border-transparent hover:bg-white/5 active:scale-95 transition-all duration-100 ease-in-out flex items-center justify-center gap-3 text-white/50 hover:text-white'>
                 <span className='text-sm'>Delete</span>
                 <Trash size={14} />
               </button>
-              <button className='py-2 px-5 w-full md:w-1/2 rounded-lg border border-white/10 bg-transparent hover:border-transparent hover:bg-white/5 transition-all duration-300 ease-in-out flex items-center justify-center gap-3'>
+              <button className='py-2 px-5 w-full md:w-1/2 rounded-lg border border-white/10 bg-transparent hover:border-transparent hover:bg-white/5 active:scale-95 transition-all duration-100 ease-in-out flex items-center justify-center gap-3'>
                 <span className='text-sm'>Edit</span>
                 <UserRoundPen size={14} />
               </button>
@@ -139,14 +139,16 @@ const Cards = () => {
         ))}
 
       {/* add new data button */}
-      <button className='border bg-white/5 border-white/10 active:scale-95 transition-all duration-200 ease-linear p-5 rounded-md font-light flex items-center justify-center min-h-[270px]'>
-        <div className='text-white/30 flex flex-col-reverse items-center justify-center gap-2 w-fit p-2'>
-          <span className='text-xl'>Add New</span>
-          <span>
-            <UserRoundPlus size={35} color='#fff' className='opacity-30' />
-          </span>
-        </div>
-      </button>
+      {home === 'true' && (
+        <button className='border bg-white/5 border-white/10 active:scale-95 transition-all duration-200 ease-linear p-5 rounded-md font-light flex items-center justify-center min-h-[270px]'>
+          <div className='text-white/30 flex flex-col-reverse items-center justify-center gap-2 w-fit p-2'>
+            <span className='text-xl'>Add New</span>
+            <span>
+              <UserRoundPlus size={35} color='#fff' className='opacity-30' />
+            </span>
+          </div>
+        </button>
+      )}
     </div>
   )
 }

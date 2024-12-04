@@ -1,7 +1,12 @@
+import Cards from '@/components/Home/Cards'
 import React from 'react'
 
 const Active = () => {
-  return <div className='text-green-400'>Active employees</div>
+  return (
+    <div>
+      <Cards home={'false'} />
+    </div>
+  )
 }
 
 export default Active
