@@ -65,9 +65,12 @@ const Cards = () => {
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-5 p-3'>
       {employees &&
         employees.map(items => (
-          <div className='border bg-white/5 border-white/10 p-5 rounded-md font-light flex flex-col items-stretch justify-evenly min-h-[270px]'>
+          <div
+            key={items.id}
+            className='border bg-white/5 border-white/10 p-5 rounded-md font-light flex flex-col items-stretch justify-evenly min-h-[270px]'
+          >
             {/* data presentation */}
-            <div key={items.id}>
+            <div>
               <div className='flex flex-col-reverse md:flex-row items-center justify-between gap-5 md:gap-0'>
                 <h3 className='text-white/90 font-medium text-md'>
                   {items.name}
@@ -75,11 +78,11 @@ const Cards = () => {
 
                 {/* user status change button */}
                 <button
-                  className={`text-white font-medium text-xs px-3 py-0.5 rounded-md active:scale-90 transition-all duration-200 ease-linear ${
+                  className={`text-white font-medium text-sm md:text-xs px-3 py-0.5 rounded-md active:scale-90 transition-all duration-200 ease-linear ${
                     items.status === 'Active'
-                      ? 'bg-green-700'
+                      ? 'bg-green-800'
                       : items.status === 'Inactive'
-                      ? 'bg-red-700'
+                      ? 'bg-red-800'
                       : 'bg-white/20'
                   }`}
                 >
