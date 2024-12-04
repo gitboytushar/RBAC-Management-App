@@ -7,7 +7,7 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip'
 
-const Cards = ({ home, setInputDiv }) => {
+const Cards = ({ home, setInputDiv, filterStatus }) => {
   const employees = [
     {
       id: 1,
@@ -67,10 +67,15 @@ const Cards = ({ home, setInputDiv }) => {
     }
   ]
 
+  // Filter employees based on filterStatus prop
+  const filteredEmployees = filterStatus
+    ? employees.filter(emp => emp.status === filterStatus)
+    : employees
+
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-5 p-3'>
-      {employees &&
-        employees.map(items => (
+      {filteredEmployees &&
+        filteredEmployees.map(items => (
           <div
             key={items.id}
             className='border bg-white/5 border-white/10 p-5 rounded-md font-light flex flex-col items-stretch justify-evenly min-h-[270px]'
@@ -138,7 +143,7 @@ const Cards = ({ home, setInputDiv }) => {
           </div>
         ))}
 
-      {/* add new data - second button positoned at the end of cards array */}
+      {/* add new data - second button positioned at the end of cards array */}
       {home === 'true' && (
         <button
           onClick={() => setInputDiv('fixed')}

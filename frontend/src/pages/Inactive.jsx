@@ -4,7 +4,7 @@ import React from 'react'
 const Inactive = () => {
   return (
     <div>
-      <Cards home={'false'} />
+      <Cards home={'false'} filterStatus='Inactive' />
     </div>
   )
 }

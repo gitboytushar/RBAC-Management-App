@@ -56,6 +56,19 @@ const InputData = ({ InputDiv, setInputDiv }) => {
                   <div className='flex flex-col space-y-1.5'>
                     <Label
                       className='text-sm md:text-md font-light text-white/70'
+                      htmlFor='role'
+                    >
+                      Employee Role
+                    </Label>
+                    <Input
+                      id='role'
+                      placeholder='e.g. HR Manager'
+                      className='placeholder:text-white/30 placeholder:font-light tracking-wider bg-transparent border-white/20 rounded-sm'
+                    />
+                  </div>
+                  <div className='flex flex-col space-y-1.5'>
+                    <Label
+                      className='text-sm md:text-md font-light text-white/70'
                       htmlFor='mail'
                     >
                       Employee Email Id
