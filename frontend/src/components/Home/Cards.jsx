@@ -1,5 +1,11 @@
 import { Trash, UserRoundPen, UserRoundPlus } from 'lucide-react'
 import React from 'react'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
 
 const Cards = () => {
   const employees = [
@@ -76,18 +82,27 @@ const Cards = () => {
                   {items.name}
                 </h3>
 
-                {/* user status change button */}
-                <button
-                  className={`text-white font-medium text-sm md:text-xs px-3 py-0.5 rounded-md active:scale-90 transition-all duration-200 ease-linear ${
-                    items.status === 'Active'
-                      ? 'bg-green-800'
-                      : items.status === 'Inactive'
-                      ? 'bg-red-800'
-                      : 'bg-white/20'
-                  }`}
-                >
-                  {items.status}
-                </button>
+                {/* cta btn - user can click to change status, shadcn/ui Tooltip to show on hover */}
+                <TooltipProvider>
+                  <Tooltip delayDuration={500} skipDelayDuration={300}>
+                    <TooltipTrigger asChild>
+                      <button
+                        className={`text-white font-medium text-sm md:text-xs px-3 py-0.5 rounded-md active:scale-90 transition-all duration-200 ease-linear ${
+                          items.status === 'Active'
+                            ? 'bg-green-900'
+                            : items.status === 'Inactive'
+                            ? 'bg-red-900'
+                            : 'bg-white/20'
+                        }`}
+                      >
+                        {items.status}
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Change state</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
 
               <hr className='my-4 rounded-full opacity-10' />
