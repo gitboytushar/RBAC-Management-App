@@ -94,9 +94,9 @@ const Cards = ({ home, setInputDiv, filterStatus }) => {
                       <button
                         className={`text-white font-medium text-sm md:text-xs px-3 py-0.5 rounded-md active:scale-90 transition-all duration-200 ease-linear ${
                           items.status === 'Active'
-                            ? 'bg-green-900'
+                            ? 'bg-green-700'
                             : items.status === 'Inactive'
-                            ? 'bg-red-900'
+                            ? 'bg-red-700'
                             : 'bg-white/20'
                         }`}
                       >
@@ -131,11 +131,11 @@ const Cards = ({ home, setInputDiv, filterStatus }) => {
 
             {/* edit data buttons */}
             <div className='flex flex-col md:flex-row items-center justify-between gap-3'>
-              <button className='py-2 px-3 w-full md:w-1/2 rounded-lg border border-white/10 bg-transparent hover:border-transparent hover:bg-white/5 active:scale-95 transition-all duration-100 ease-in-out flex items-center justify-center gap-3 text-white/50 hover:text-white'>
+              <button className='py-2 px-3 w-full md:w-1/2 rounded-lg border border-white/20 bg-transparent hover:border-transparent hover:bg-white/5 active:scale-95 transition-all duration-100 ease-in-out flex items-center justify-center gap-3 text-white opacity-60 hover:opacity-100'>
                 <span className='text-sm'>Delete</span>
                 <Trash size={14} />
               </button>
-              <button className='py-2 px-5 w-full md:w-1/2 rounded-lg border border-white/10 bg-transparent hover:border-transparent hover:bg-white/5 active:scale-95 transition-all duration-100 ease-in-out flex items-center justify-center gap-3'>
+              <button className='py-2 px-5 w-full md:w-1/2 rounded-lg border border-white/30 bg-transparent hover:border-transparent hover:bg-white/5 active:scale-95 transition-all duration-100 ease-in-out flex items-center justify-center gap-3'>
                 <span className='text-sm'>Edit</span>
                 <UserRoundPen size={14} />
               </button>
