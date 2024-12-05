@@ -10,19 +10,19 @@ import {
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { ArrowRight } from 'lucide-react'
+import { Check } from 'lucide-react'
 
-const SignUp = () => {
+const SignIn = () => {
   return (
     <>
       <Card className='px-0 py-0 md:p-4 motion-preset-fade motion-duration-500'>
         <CardHeader className='flex w-full items-center justify-center text-center mb-2'>
-          <CardTitle className='tracking-wider'>Create Account</CardTitle>
+          <CardTitle className='tracking-wider'>Welcome Back</CardTitle>
           <CardDescription className='text-white/40 tracking-wider text-sm md:text-lg font-thin'>
-            Remember these credentials
+            Manage Your Employees
           </CardDescription>
         </CardHeader>
-        {/* signup fields */}
+        {/* signIn fields */}
         <CardContent>
           <form>
             <div className='grid w-full items-center gap-6'>
@@ -36,7 +36,7 @@ const SignUp = () => {
                 </Label>
                 <Input
                   id='username'
-                  placeholder='johndoe'
+                  placeholder='jackiechan'
                   className='placeholder:text-white/30 placeholder:font-light tracking-wider bg-transparent border-white/20 rounded-sm'
                 />
               </div>
@@ -50,7 +50,7 @@ const SignUp = () => {
                 </Label>
                 <Input
                   id='email'
-                  placeholder='johndoe@gmail.com'
+                  placeholder='jakiechan@gmail.com'
                   className='placeholder:text-white/30 placeholder:font-light tracking-wider bg-transparent border-white/20 rounded-sm'
                 />
               </div>
@@ -60,7 +60,7 @@ const SignUp = () => {
                   className='text-sm md:text-md font-light text-white/70'
                   htmlFor='password'
                 >
-                  Create Password
+                  Enter Your Password
                 </Label>
                 <Input
                   id='password'
@@ -74,7 +74,7 @@ const SignUp = () => {
         {/* cta buttons */}
         <CardFooter className='flex justify-end mt-4 pb-5'>
           <Button className='flex items-center justify-center py-1 px-4 gap-2 border border-white/40 text-white bg-white/15 hover:border-transparent font-normal hover:font-medium hover:bg-white hover:text-black active:scale-95 transition-colors duration-300 ease-in-out'>
-            <span>Submit</span> <ArrowRight />
+            <span>Confirm</span> <Check />
           </Button>
         </CardFooter>
       </Card>
@@ -82,4 +82,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignIn
