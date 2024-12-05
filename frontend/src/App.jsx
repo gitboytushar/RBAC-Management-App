@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import AllEmployees from './pages/AllEmployees'
 import Active from './pages/Active'
 import Inactive from './pages/Inactive'
-import SignUp from './pages/SignUp'
+import Entry from './pages/Entry'
 
 function App () {
   return (
@@ -19,8 +19,8 @@ function App () {
             <Route path='/inactive' element={<Inactive />} />
           </Route>
 
-          {/* Route to Sign up Page */}
-          <Route path='/signup' element={<SignUp />} />
+          {/* Route to SignIn-SignUp Page */}
+          <Route path='/entry' element={<Entry />} />
         </Routes>
       </Router>
     </div>

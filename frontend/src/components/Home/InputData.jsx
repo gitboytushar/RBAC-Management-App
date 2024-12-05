@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select'
+import { Check, X } from 'lucide-react'
 
 const InputData = ({ InputDiv, setInputDiv }) => {
   return (
@@ -119,12 +120,12 @@ const InputData = ({ InputDiv, setInputDiv }) => {
             <CardFooter className='flex justify-between'>
               <Button
                 onClick={() => setInputDiv('hidden')}
-                className='border border-white/20 text-white/50 bg-transparent font-normal hover:border-transparent hover:bg-red-800 hover:text-white active:scale-95 transition-all duration-200 ease-in-out'
+                className='flex items-center justify-center py-1 pl-3 pr-2 gap-1 border border-white/20 text-white/40 bg-transparent font-normal hover:border-transparent hover:bg-red-700 hover:text-white active:scale-95 transition-colors duration-300 ease-in-out'
               >
-                Cancel
+                <span>Cancel</span> <X />
               </Button>
-              <Button className='border border-white/30 text-white bg-white/10 font-normal hover:border-transparent hover:bg-blue-700 hover:text-white active:scale-95 transition-all duration-200 ease-in-out'>
-                Submit
+              <Button className='flex items-center justify-center py-1 px-5 gap-3 border border-white/40 text-white bg-white/15 hover:border-transparent font-normal hover:font-medium hover:bg-white hover:text-black active:scale-95 transition-colors duration-300 ease-in-out'>
+                <span>Add</span> <Check />
               </Button>
             </CardFooter>
           </Card>
