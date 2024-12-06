@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <>
-      <div className='relative flex h-[98vh] gap-2 overflow-hidden'>
+      <div className='relative flex lg:h-[98vh] gap-2 overflow-x-hidden'>
         {/* Sidebar */}
         <div
           className={`absolute lg:relative z-20 transform ${

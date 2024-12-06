@@ -29,9 +29,9 @@ const InputData = ({ InputDiv, setInputDiv }) => {
         ></div>
         {/* card content */}
         <div
-          className={`z-30 ${InputDiv} inset-0 h-screen w-full flex items-center justify-center`}
+          className={`z-30 ${InputDiv} left-0 -top-12 md:top-0 h-screen w-full flex items-center justify-center`}
         >
-          <Card className='w-[90vw] md:w-2/3 lg:w-[500px] px-0 py-0 md:py-3 md:px-4 shadow-[0_0_20px_10px_rgba(0,0,0)] motion-preset-pop motion-duration-300'>
+          <Card className='w-[90vw] md:w-2/3 lg:w-[500px] px-0 py-0 md:py-3 md:px-4 motion-preset-shrink motion-duration-300'>
             <CardHeader className='flex w-full items-center mb-2'>
               <CardTitle>Add New Card</CardTitle>
               <CardDescription className='tracking-wider'>

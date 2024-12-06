@@ -5,12 +5,12 @@ import SignIn from './SignIn'
 
 const Entry = () => {
   return (
-    <div className='flex h-[98vh] overflow-hidden'>
-      <div className='w-full p-4 border border-white/20 text-white/20 rounded-lg flex items-center justify-center relative'>
+    <div className='flex items-center justify-center'>
+      <div className='w-full p-4 flex items-center justify-center'>
         {/* shadcn tabs component */}
         <Tabs
           defaultValue='signup'
-          className='w-[90vw] max-w-[430px] absolute top-[17vh]'
+          className='w-[90vw] max-w-[430px] fixed top-[15vh]'
         >
           <TabsList className='grid gap-1 w-full grid-cols-2'>
             <TabsTrigger value='signup'>Sign Up</TabsTrigger>

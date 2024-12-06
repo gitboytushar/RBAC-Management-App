@@ -15,7 +15,7 @@ import { Check } from 'lucide-react'
 const SignIn = () => {
   return (
     <>
-      <Card className='px-0 py-0 md:p-4 motion-preset-fade motion-duration-500'>
+      <Card className='px-0 py-0 md:p-4 motion-preset-fade motion-duration-1000'>
         <CardHeader className='flex w-full items-center justify-center text-center mb-2'>
           <CardTitle className='tracking-wider'>Welcome Back</CardTitle>
           <CardDescription className='text-white/40 tracking-wider text-sm md:text-lg font-thin'>

@@ -8,7 +8,7 @@ import Entry from './pages/Entry'
 
 function App () {
   return (
-    <div className='bg-black/90 text-white h-screen p-2 relative'>
+    <div className='bg-black/90 text-white min-h-screen p-2 relative'>
       <Router>
         <Routes>
           {/* entry point */}
