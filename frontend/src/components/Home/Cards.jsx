@@ -78,7 +78,7 @@ const Cards = ({ home, setInputDiv, filterStatus }) => {
         filteredEmployees.map(items => (
           <div
             key={items.id}
-            className='border bg-white/5 border-white/10 p-5 rounded-md font-light flex flex-col items-stretch justify-evenly min-h-[270px]'
+            className='border bg-white/5 border-white/10 p-5 rounded-md font-light flex flex-col items-stretch justify-evenly min-h-[270px] cardsAnimations'
           >
             {/* data presentation */}
             <div>

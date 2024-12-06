@@ -22,7 +22,25 @@ body {
 }
 
 @layer base {
-  :root {
+    :root {
         --radius: 0.5rem;
     }
+}
+
+/* cards entry - custom animation */
+@keyframes cardEntry {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+.cardsAnimations {
+    animation: cardEntry 0.2s ease-in forwards;
 }
