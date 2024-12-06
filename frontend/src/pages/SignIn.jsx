@@ -40,27 +40,14 @@ const SignIn = () => {
                   className='placeholder:text-white/30 placeholder:font-light tracking-wider bg-transparent border-white/20 rounded-sm'
                 />
               </div>
-              {/* email */}
-              <div className='flex flex-col space-y-1'>
-                <Label
-                  className='text-sm md:text-md font-light text-white/70'
-                  htmlFor='mail'
-                >
-                  Email Id
-                </Label>
-                <Input
-                  id='email'
-                  placeholder='jakiechan@gmail.com'
-                  className='placeholder:text-white/30 placeholder:font-light tracking-wider bg-transparent border-white/20 rounded-sm'
-                />
-              </div>
+
               {/* password */}
               <div className='flex flex-col space-y-1'>
                 <Label
                   className='text-sm md:text-md font-light text-white/70'
                   htmlFor='password'
                 >
-                  Enter Your Password
+                  Password
                 </Label>
                 <Input
                   id='password'
