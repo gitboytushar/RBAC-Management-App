@@ -5,11 +5,11 @@ const app = express()
 require('dotenv').config()
 require('./conn/conn')
 
-// to use custom api
+// to use custom sign-in api
 const cors = require('cors')
-const UserAPI = require('./routes/user')
+const UserAPI = require('./routes/userAuth')
 app.use(cors())
-app.use(express.json())
+app.use(express.json()) // very important to mention data format like this, to send and receive data with api response
 
 app.use('/api/v1', UserAPI)
 // on this url -> localhost:3000/api/v1/sign-in -> it fetches given data
@@ -21,5 +21,5 @@ app.use('/', (req, res) => {
 const PORT = 3000
 
 app.listen(PORT, () => {
-  console.log('Backend Server is Running...')
+  console.log('Server is Running...')
 })
