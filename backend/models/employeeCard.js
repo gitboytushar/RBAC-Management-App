@@ -1,34 +1,32 @@
-// const { timeStamp } = require('console')
 const mongoose = require('mongoose')
+
 const cardSchema = new mongoose.Schema(
   {
     name: {
       type: String,
       required: true
     },
-    //   status: {
-    //     type: String,
-    //     required: true
-    //   },
-
     role: {
       type: String,
       required: true
     },
     email: {
       type: String,
-      required: true
+      required: true,
+      unique: true
     },
-    active: {
-      type: boolean,
-      default: false
+    status: {
+      type: String,
+      required: true,
+      enum: ['Active', 'In-Active'], // Enforce predefined choices
+      default: 'In-Active'
     },
     department: {
       type: String,
       required: true
     }
   },
-  { timestamps: true } // to save the card creation timestamp for futher use in algorithms
+  { timestamps: true } // Adds createdAt and updatedAt fields
 )
 
-module.exports = mongoose.model('card', cardSchema)
+module.exports = mongoose.model('Card', cardSchema)
