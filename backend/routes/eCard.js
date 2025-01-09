@@ -1,12 +1,13 @@
 const router = require('express').Router()
 const Card = require('../models/employeeCard')
 const User = require('../models/user')
+const { authenticateToken } = require('./auth')
 
-// create employee card
-router.post('/create-card', async (req, res) => {
+// create employee card api - working
+router.post('/create-card', authenticateToken, async (req, res) => {
   try {
     // get data and save it
-    const { name, role, email, department } = req.body
+    const { name, role, email, department, state } = req.body
     const { id } = req.headers
 
     // Check if the User exists
@@ -20,7 +21,8 @@ router.post('/create-card', async (req, res) => {
       name: name,
       role: role,
       email: email,
-      department: department
+      department: department,
+      state: state // Include state field
     })
 
     const saveCard = await newCard.save()
@@ -33,21 +35,90 @@ router.post('/create-card', async (req, res) => {
       { new: true }
     )
 
-    // response
-    res.status(201).json({
-      message: 'Employee card created successfully 🎉',
-      card: saveCard
-    })
+    res
+      .status(201)
+      .json({ message: 'Card created successfully 🎉', card: saveCard })
   } catch (error) {
-    // Handle duplicate key error
-    if (error.code === 11000) {
-      return res.status(400).json({
-        message: `Duplicate key error: ${
-          Object.keys(error.keyValue)[0]
-        } must be unique.`,
-        field: error.keyValue
-      })
+    console.log(error)
+    res.status(500).json({ message: 'Internal Server Error' })
+  }
+})
+
+// fetch employee cards api - some issue
+router.get('/get-all-cards', authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.headers
+
+    // get all the cards with their respective data
+    const userData = await User.findById(id).populate({
+      path: 'cards', // Correct path name
+      options: { sort: { createdAt: -1 } }
+    })
+
+    if (!userData) {
+      return res.status(404).json({ message: 'User not found!' })
     }
+
+    // send only the cards data to the client
+    res.status(200).json({ cards: userData.cards })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Internal Server Error' })
+  }
+})
+
+// delete employee card api - working
+router.delete('/delete-card/:id', authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.params
+    const userId = req.headers.id
+
+    // Check if the card exists
+    const card = await Card.findById(id)
+    if (!card) {
+      return res.status(404).json({ message: 'Card not found!' })
+    }
+    // delete the card
+    await Card.findByIdAndDelete(id)
+    // also delete the card from the user's card-Array in database
+    await User.findByIdAndUpdate(userId, { $pull: { cards: id } })
+
+    // response
+    res.status(200).json({ message: 'Card deleted successfully 🎉' })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Internal Server Error' })
+  }
+})
+
+// update employee card api -
+router.put('/update-card/:id', authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.params
+    const { name, role, email, department, state } = req.body
+
+    // Check if the card exists
+    const card = await Card.findById(id)
+    if (!card) {
+      return res.status(404).json({ message: 'Card not found!' })
+    }
+
+    // update the card
+    await Card.findByIdAndUpdate(
+      id,
+      {
+        name: name,
+        role: role,
+        email: email,
+        department: department,
+        state: state
+      },
+      { new: true }
+    )
+
+    // response
+    res.status(200).json({ message: 'Card updated successfully 🎉' })
+  } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Internal Server Error' })
   }

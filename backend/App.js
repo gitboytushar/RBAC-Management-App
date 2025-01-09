@@ -7,7 +7,7 @@ require('./conn/conn')
 
 // to use custom sign-in api
 const cors = require('cors')
-const UserAPI = require('./routes/userAuth')
+const UserAPI = require('./routes/user')
 const CardAPI = require('./routes/eCard')
 
 app.use(cors())

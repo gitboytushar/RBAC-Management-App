@@ -15,7 +15,7 @@ const cardSchema = new mongoose.Schema(
       required: true,
       unique: true
     },
-    status: {
+    state: {
       type: String,
       required: true,
       enum: ['Active', 'In-Active'], // Enforce predefined choices
