@@ -6,6 +6,7 @@ import Active from './pages/Active'
 import Inactive from './pages/Inactive'
 import Entry from './pages/Entry'
 
+
 function App () {
   return (
     <div className='bg-black/90 text-white min-h-screen p-2 relative'>
