@@ -1,29 +1,28 @@
-# Role Based Access Control (RBAC) UI Assignment Project
+# Employee Management App • MERN
 
-I apologize for not meeting the time constraints set for this project. As this is my first experience with such a project, I have been learning and developing new skills. I have made significant progress and will complete the project as soon as possible to enhance my professional development. I appreciate the opportunity to challenge myself and contribute to the development of a useful and modern web application as a RBAC system.
+I have made significant progress till now and will complete this project as soon as possible. This application show cases the mordern and professional user interface designed by me to manage employee data. Later on I bring the login functionality and some RBAC system to make this app even more useful.
 
-## 🎉 Technologies used:
+## 🎉 Technologies used till now:
 
 - ReactJs
-- TailwindCss
-- Shadcn/ui
+- Tailwind Css
+- Shadcn components
 
-## 🌱 Technologies planned for Next Update:
+## 🌱 In Progess... Technologies to be used:
 
-- MongoDB
-- ExpressJs
 - NodeJs
+- Express Js
+- MongoDB
 
 ## ✨ Current features:
 
-- Provides Clean, Modern and Minimal User interface with Dark Theme.
-- Static sample data Cards grid showing Employees information
-- React Routing to Components with User clicks
-- Active and Inactive State Filter pages
-- Fully Responsive Design
-- Shadcn Card component for "Add New Card Form"
-- Shadcn Tooltip on Status Button on each Cards
-- Custom user interactions and animations on website to improve User Experience
+- Provides Modern and intuitive user interface.
+- Sample data cards showing employees dummy information.
+- Active and Inactive state sections.
+- Fully responsive design.
+- Shadcn based Add New Card Form.
+- Shadcn tooltip for employee state button.
+- Clean animations to improve user experience.
 
 ## 👨‍💻 Installation
 
@@ -36,7 +35,7 @@ git clone https://github.com/gitboytushar/RBAC-Management-App.git
 2. "Open terminal"
 
 ```bash
-cd RBAC-Management-App/frontend/
+cd frontend/
 ```
 
 3. "Install Dependencies"
